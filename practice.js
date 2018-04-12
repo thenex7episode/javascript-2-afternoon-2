@@ -18,7 +18,9 @@ var arr = [10,20,30];
 */
 
 //Code Here
-
+function first (arr){
+  return arr[0]
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -33,7 +35,9 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
+function last (arr){
+  return arr[2]
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -48,6 +52,15 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 */
 
 //Code Here
+function looper (family){
+  for (let i = 0; i < family.length; i++ ) {
+    
+   alert(family[i])
+
+     
+    
+  }
+}
 
 
 
@@ -63,7 +76,14 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
+function reversedLooper (letters) {
+  for (let i = letters.length - 1; i >= 0; i--) {
+    alert(letters[i])
+  }
 
+  //  alert(letters[i])
+  
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -78,9 +98,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-
-
-
+function evenFinder (nums){
+  var arr = []
+  for(let i = 0; i < nums.length; i++){
+if (nums[i]%2===0){
+  arr.push(nums[i])
+  }
+}
+return arr
+}
 ////////// EXTRA PRACTICE PROBLEMS BELOW //////////
 
 ////////// PROBLEM 6 //////////
@@ -95,6 +121,17 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+function divider(numbersArray){
+    evens = numbersArray.filter(function(number){
+    		return number % 2 === 0;
+    });
+    odds = numbersArray.filter(function(number){
+    		return number % 2 !== 0;
+    });
+    return [evens,odds];
+  }
+  
+  divider(numbersArray)
 
 
 
@@ -116,7 +153,16 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+function finder (arr) {
+  let randomNum = getRandomArbitrary(); 
+  for (i=0; i< arr.length; i++) {
+    if (arr[i] === randomNum) {
+      return true
+    }
+  }
+  return false;
+}
+  
 
 
 ////////// PROBLEM 8 //////////
@@ -143,7 +189,24 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function removeItem (myGroceryList,item) {
+  if(item === undefined || myGroceryList === undefined) {
+    return [];
+  }
+  for (i=0; i< myGroceryList.length;i++) {
+    if (myGroceryList[i] === item) {
+      myGroceryList.splice(i, 1)
+    }
+  }
+  return myGroceryList;
+}
+function addItem (myGroceryList,item) {
+  if(myGroceryList === undefined || item === undefined) {
+    return [];
+  }
+  myGroceryList.push(item);
+  return myGroceryList;
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -153,7 +216,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker () {
+  var arr = []
+  for (var i=0; i< 215; i++) {
+    arr[i] = i + 1
+  }
+  return arr
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -169,7 +238,16 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
-
+function addTen(arr) {
+  var numbersPlusTen = []
+  for ( i = 0; i < arr.length; i++ ) {
+    numbersPlusTen.push(parseInt(arr[i]) + 10)
+    // console.log(numbersPlusTen)
+    
+  }
+return numbersPlusTen
+}
+addTen(numbers)
 
 
 ////////// PROBLEM 11 //////////
@@ -194,7 +272,13 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1, arr2) {
+if (arr1.length> arr2.length) {
+  return arr1
+}else {
+  return arr2
+}
+}
 
 
 /*
@@ -202,11 +286,23 @@ for(var i = 0; i < num2; i++){
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example).
   'both' should return a new array with the matching numbers found in both arr1 and arr2.
 
-  Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
+  Example: var 
+  arr1 = [1,2,3,4]
+  ;
+   var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
 //Code Here
-
+function both (arr1, arr2) {
+  const newArr = []
+  for (i=0; i< arr1.length; i++) {
+    if (arr2.indexOf(arr1[i])>=0) {
+        newArr.push(arr1[i])
+      }
+  }
+  // console.log(newArr)
+  return newArr
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -246,7 +342,8 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees.push(tyler,cahlan,ryan,colt)
+// console.log(devMountainEmployees)
 
 
 /*
@@ -256,6 +353,15 @@ var colt = {
 
 //Code Here
 
+function remove(arr) {
+      arr.splice(1, 1)
+  
+  
+  console.log(arr)
+  return arr
+}
+
+remove(devMountainEmployees)
 
 
 ////////// PROBLEM 13 //////////
@@ -266,7 +372,18 @@ var colt = {
   Create an empty array called users.
 */
 
-//Code Here
+let users = [user2 = {
+    name: 'Jim',
+    age: '3'
+},
+user3 = {
+    name: 'Alex',
+    age: '12'
+},
+user4 = {
+    name: 'L',
+    age: '7'
+}]
 
 
 
@@ -285,7 +402,7 @@ var user1 = {
 };
 // Do not edit the code above.
 
-//Code Here
+users.push(user1)
 
 
 
@@ -299,7 +416,7 @@ var user1 = {
   Once you find the particular index he's located in, delete him from the array.
 */
 
-//Code Here
+users.splice(3,1)
 
 
 
